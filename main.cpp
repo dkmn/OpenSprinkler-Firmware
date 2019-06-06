@@ -109,7 +109,7 @@ void flow_poll() {
 
   ulong curr = millis();
 
-  if(curr < os.flowcount_time_ms+10) return;  // debounce threshold: 10ms
+  if(curr < os.flowcount_time_ms+FLOWSENSOR_DEBOUNCE) return;  // debounce threshold: previously defaulted to 10(ms)
   flow_count++;
   os.flowcount_time_ms = curr;
 

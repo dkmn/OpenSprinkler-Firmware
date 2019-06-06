@@ -60,7 +60,8 @@ typedef unsigned long ulong;
 #define IFTTT_KEY_MAXSIZE     128
 #define STATION_SPECIAL_DATA_SIZE  (TMP_BUFFER_SIZE - 8)
 
-#define FLOWCOUNT_RT_WINDOW   30    // flow count window (for computing real-time flow rate), 30 seconds
+#define FLOWCOUNT_RT_WINDOW   120    // flow count window (for computing real-time flow rate), 120 seconds
+#define FLOWSENSOR_DEBOUNCE   100
 
 /** Station type macro defines */
 #define STN_TYPE_STANDARD    0x00
