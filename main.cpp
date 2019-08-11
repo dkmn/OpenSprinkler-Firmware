@@ -90,7 +90,8 @@ ProgramData pd;   // ProgramdData object
  * flow_stop - time when valve turns off (last rising edge pulse detected before off)
  * flow_gallons - total # of gallons+1 from flow_start to flow_stop
  * flow_last_gpm - last flow rate measured (averaged over flow_gallons) from last valve stopped (used to write to log file). */
-ulong flow_begin, flow_start, flow_stop, flow_gallons;
+ulong flow_begin, flow_start, flow_stop;
+ulong flow_gallons = 0;   // initialize to prevent assumption errors
 ulong flow_count = 0;
 byte prev_flow_state = HIGH;
 float flow_last_gpm=0;
