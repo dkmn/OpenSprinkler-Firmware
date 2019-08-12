@@ -117,7 +117,7 @@ void flow_poll() {
 
   /* RAH implementation of flow sensor */
   if (flow_start==0) { flow_gallons=0; flow_start=curr;}  // if first pulse, record time
-  if ((curr-flow_start)<90000) { flow_gallons=0; } // wait 90 seconds before recording flow_begin
+  if ((curr-flow_start)<10000) { flow_gallons=0; } // wait 10 seconds before recording flow_begin
   else {  if (flow_gallons==1)  {  flow_begin = curr;}}
   flow_stop = curr; // get time in ms for stop
   flow_gallons++;  // increment gallon count for each interrupt
