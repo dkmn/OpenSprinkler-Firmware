@@ -1,0 +1,59 @@
+cmake_minimum_required(VERSION 3.16)
+project(OpenSprinkler_Firmware)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(.)
+include_directories(examples)
+include_directories(examples/mainArduino)
+include_directories(html)
+
+add_executable(OpenSprinkler_Firmware
+        examples/mainArduino/mainArduino.ino
+        html/ap_home.html
+        html/ap_update.html
+        html/html2raw.cpp
+        html/sta_update.html
+        Arduino.mk
+        build.sh
+        Common.mk
+        defines.cpp
+        defines.h
+        espconnect.cpp
+        espconnect.h
+        etherport.cpp
+        etherport.h
+        font.h
+        gpio.cpp
+        gpio.h
+        htmls.h
+        I2CRTC.cpp
+        I2CRTC.h
+        images.h
+        LICENSE.txt
+        LiquidCrystal.cpp
+        LiquidCrystal.h
+        main.cpp
+        mainArduino.ino
+        make.lin32
+        make.os23
+        makeEspArduino.mk
+        NTPClient.cpp
+        NTPClient.h
+        OpenSprinkler.cpp
+        OpenSprinkler.h
+        OpenSprinkler.launch
+        program.cpp
+        program.h
+        README.txt
+        server.cpp
+        server.h
+        SSD1306Display.h
+        testmode.h
+        TimeLib.cpp
+        TimeLib.h
+        updater.sh
+        utils.cpp
+        utils.h
+        weather.cpp
+        weather.h)
