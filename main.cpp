@@ -392,7 +392,8 @@ void handle_web_request(char *p);
 /** Main Loop */
 void do_loop()
 {
-	// handle flow sensor using polling every 1ms (maximum freq 1/(2*1ms)=500Hz)
+	// handle flow sensor using polling with defined period
+	// (previously: every 1ms (maximum freq 1/(2*1ms)=500Hz), now defaulting 500ms -> 1Hz
 	static ulong flowpoll_timeout=0;
 	if(os.iopts[IOPT_SENSOR1_TYPE]==SENSOR_TYPE_FLOW) {
 		ulong curr = millis();
