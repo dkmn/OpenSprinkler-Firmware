@@ -397,7 +397,7 @@ void do_loop()
 	static ulong flowpoll_timeout=0;
 	if(os.iopts[IOPT_SENSOR1_TYPE]==SENSOR_TYPE_FLOW) {
 		ulong curr = millis();
-		if(curr > flowpoll_timeout + FLOWSENSOR_POLLING_RATE) {
+		if(curr > flowpoll_timeout + FLOWSENSOR_POLLING_PERIOD) {
 			flowpoll_timeout = curr;
 			flow_poll();
 		}
