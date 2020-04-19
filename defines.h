@@ -93,6 +93,8 @@ typedef unsigned long ulong;
 #define SENSOR_TYPE_OTHER   0xFF
 
 #define FLOWCOUNT_RT_WINDOW   30    // flow count window (for computing real-time flow rate), 30 seconds
+#define FLOWSENSOR_POLLING_RATE   500   // flow sensor polling rate (ms), prev. defaulted to 1 ms
+                                    // adjusting to allow debounce of slower mechanical (e.g. reed) switches
 
 /** Reboot cause */
 #define REBOOT_CAUSE_NONE   0
