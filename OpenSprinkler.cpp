@@ -1146,7 +1146,9 @@ void OpenSprinkler::apply_all_station_bits() {
 /** Read rain sensor status */
 void OpenSprinkler::detect_binarysensor_status(ulong curr_time) {
 	// sensor_type: 0 if normally closed, 1 if normally open
-	if(iopts[IOPT_SENSOR1_TYPE]==SENSOR_TYPE_RAIN || iopts[IOPT_SENSOR1_TYPE]==SENSOR_TYPE_SOIL) {
+	if(iopts[IOPT_SENSOR1_TYPE]==SENSOR_TYPE_RAIN ||
+	        iopts[IOPT_SENSOR1_TYPE]==SENSOR_TYPE_SOIL ||
+	        iopts[IOPT_SENSOR1_TYPE]==SENSOR_TYPE_FLOW) {
 		pinModeExt(PIN_SENSOR1, INPUT_PULLUP); // this seems necessary for OS 3.2
 		byte val = digitalReadExt(PIN_SENSOR1);
 		status.sensor1 = (val == iopts[IOPT_SENSOR1_OPTION]) ? 0 : 1;
