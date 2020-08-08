@@ -28,6 +28,7 @@
 #include "weather.h"
 #include "server.h"
 #include "mqtt.h"
+#include "stdio.h"
 
 #if defined(ARDUINO)
 	EthernetServer *m_server = NULL;
@@ -969,8 +970,23 @@ void do_loop()
 			if (curr_time % FLOWCOUNT_RT_WINDOW == 0) {
 				os.flowcount_rt = (flow_count > flowcount_rt_start) ? flow_count - flowcount_rt_start: 0;
 				flowcount_rt_start = flow_count;
+//            DEBUG_PRINTLN(os.flowcount_rt);
+                char buffer[50];
+//                int n = sprintf(buffer,"os.flowcount_rt: %l\n", os.flowcount_rt);
+      //          int n = sprintf(buffer,"os.flowcount_rt: %l\n", 1111);
+    //            DEBUG_PRINTLN(buffer);
+                printf("os.flowcount_rt: %lu\n", 1111lu);
+                printf("os.flowcount_rt: %lu\n", os.flowcount_rt);
+
+//                n = sprintf(buffer,"os.flow_count: %l\n", flow_count);
+//                n = sprintf(buffer,"os.flow_count: %l\n", 222222);
+  //              DEBUG_PRINTLN(buffer);
+                printf("os.flow_count: %lu\n", 222222lu);
+                printf("os.flow_count: %lu\n", flow_count);
+
+//            "MQTT Publish: Failed (%d)\n",
 			}
-		}
+        }
 
 		// perform ntp sync
 		// instead of using curr_time, which may change due to NTP sync itself
